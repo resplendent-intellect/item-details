@@ -7,6 +7,20 @@ const randomInStock = () => {
   return choices[random];
 };
 
+const randomVariations = () => {
+  const randNum = Math.floor(Math.random() * 5);
+  const variations = [];
+  for (let i = 0; i < randNum; i += 1) {
+    variations.push({
+      variationType: faker.random.word(),
+      name: faker.commerce.productName(),
+      price: faker.commerce.price(),
+      image: faker.image.imageUrl(),
+    });
+  }
+  return variations;
+};
+
 const seed = () => {
   for (let i = 0; i < 100; i += 1) {
     const newProduct = new Product({
@@ -16,12 +30,7 @@ const seed = () => {
       color: faker.commerce.color(),
       sku: faker.random.number(),
       price: faker.commerce.price(),
-      variations: [{
-        variationType: faker.random.word(),
-        name: faker.commerce.productName(),
-        price: faker.commerce.price(),
-        image: faker.image.imageUrl(),
-      }],
+      variations: randomVariations(),
       protectionPlans: [{
         name: 'Coverage Plan',
         price: faker.commerce.price(),
@@ -45,3 +54,5 @@ const seed = () => {
 };
 
 seed();
+
+module.exports = seed;
