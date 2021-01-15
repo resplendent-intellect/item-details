@@ -21,6 +21,35 @@ const randomVariations = () => {
   return variations;
 };
 
+const randomProtection = () => {
+  const randomName = () => {
+    const choices = ['Coverage Plan', 'Apple Care'];
+    return choices[Math.floor(Math.random() * 2)];
+  };
+  const protections = [];
+  const rand = Math.floor(Math.random() * 3);
+  for (let i = 0; i < rand; i += 1) {
+    protections.push({
+      name: randomName(),
+      price: faker.commerce.price(),
+    });
+  }
+  return protections;
+};
+
+const randomOffers = () => {
+  const rand = Math.floor(Math.random() * 3);
+  const offers = [];
+  for (let i = 0; i < rand; i += 1) {
+    offers.push({
+      title: 'Hot offer',
+      subtitle: faker.lorem.sentence(),
+      body: faker.lorem.paragraph(),
+    });
+  }
+  return offers;
+};
+
 const seed = () => {
   for (let i = 0; i < 100; i += 1) {
     const newProduct = new Product({
@@ -31,20 +60,13 @@ const seed = () => {
       sku: faker.random.number(),
       price: faker.commerce.price(),
       variations: randomVariations(),
-      protectionPlans: [{
-        name: 'Coverage Plan',
-        price: faker.commerce.price(),
-      }],
+      protectionPlans: randomProtection(),
       inStock: randomInStock(),
-      offers: [{
-        title: 'Hot offer',
-        subtitle: faker.lorem.sentence(),
-        body: faker.lorem.paragraph(),
-      }],
-      mightAlsoNeed: [{
+      offers: randomOffers(),
+      mightAlsoNeed: {
         name: faker.commerce.productName(),
         price: faker.commerce.price(),
-      }],
+      },
     });
     newProduct.save()
       .catch((err) => {
@@ -55,4 +77,6 @@ const seed = () => {
 
 seed();
 
-module.exports = seed;
+module.exports = {
+  seed,
+};
