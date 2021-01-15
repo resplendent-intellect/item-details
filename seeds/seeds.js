@@ -38,9 +38,6 @@ const seed = () => {
       }],
     });
     newProduct.save()
-    // .then((results) => {
-
-    // })
       .catch((err) => {
         throw err;
       });
