@@ -3,7 +3,6 @@ jobs:
   run_tests:
     docker:
       - image: circleci/node:10.23.0
-
     steps:
       - checkout
       - run:
