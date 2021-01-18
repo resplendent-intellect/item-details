@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  run_tests:
+  build:
     docker:
       - image: circleci/node:10.23.0
       - image: circleci/mongo:4.4.1
