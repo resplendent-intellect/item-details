@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:10.23.0
       - image: circleci/mongo:4.4.1
 
     working_directory: ~/repo
@@ -17,4 +17,5 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      - run: npm start
       - run: npm test
