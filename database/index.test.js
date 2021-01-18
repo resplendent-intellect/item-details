@@ -67,7 +67,7 @@ describe('insert', () => {
     await db.close();
   });
 
-  it('should insert a doc into collection', async () => {
+  test('should insert a doc into collection', async () => {
     const products = db.collection('products');
 
     const mockProduct = {
