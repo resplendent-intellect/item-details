@@ -7855,14 +7855,14 @@ var App = function (_React$Component) {
   _createClass(App, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.getProduct();
+      this.getProduct('60021bc40276d4416e8f8cf3');
     }
   }, {
     key: 'getProduct',
-    value: function getProduct() {
+    value: function getProduct(id) {
       var _this2 = this;
 
-      _jquery2.default.get('/products/60021bc40276d4416e8f8cf3', function (data) {
+      _jquery2.default.get('/products/' + id, function (data) {
         _this2.setState(data);
       });
     }
@@ -7870,7 +7870,7 @@ var App = function (_React$Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'div',
+        'h1',
         null,
         'Hello from App.jsx'
       );
