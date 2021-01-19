@@ -1,5 +1,6 @@
 import 'core-js';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App.jsx';
 
-ReactDOM.render(<div>hello world</div>, document.querySelector('#app'));
+ReactDOM.render(<App />, document.querySelector('#app'));

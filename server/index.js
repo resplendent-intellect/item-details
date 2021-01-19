@@ -7,6 +7,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(__dirname + '/../client/dist'));
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
