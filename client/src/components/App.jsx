@@ -8,17 +8,17 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getProduct();
+    this.getProduct('60021bc40276d4416e8f8cf3');
   }
 
-  getProduct() {
-    $.get('/products/60021bc40276d4416e8f8cf3', (data) => {
+  getProduct(id) {
+    $.get(`/products/${id}`, (data) => {
       this.setState(data);
     });
   }
 
   render() {
-    return <div>Hello from App.jsx</div>;
+    return <h1>Hello from App.jsx</h1>;
   }
 }
 
