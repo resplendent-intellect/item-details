@@ -3,9 +3,9 @@ const { Product } = require('./index');
 const findOne = (id, callback) => {
   Product.findById(id, (err, results) => {
     if (err) {
-      throw err;
+      callback(err);
     }
-    callback(results);
+    callback(null, results);
   });
 };
 

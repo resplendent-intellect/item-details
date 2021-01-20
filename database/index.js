@@ -19,9 +19,11 @@ const productSchema = new mongoose.Schema({
   price: Number,
   variations: [{
     variationType: String,
-    name: String,
-    price: Number,
-    image: String,
+    variationItems: [{
+      name: String,
+      price: Number,
+      image: String,
+    }],
   }],
   protectionPlans: [{ name: String, price: Number }],
   inStock: String,

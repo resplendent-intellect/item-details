@@ -7,15 +7,26 @@ const randomInStock = () => {
   return choices[random];
 };
 
-const randomVariations = () => {
-  const randNum = Math.floor(Math.random() * 5);
-  const variations = [];
-  for (let i = 0; i < randNum; i += 1) {
-    variations.push({
-      variationType: faker.random.word(),
+const randomVariationItems = () => {
+  const randVariationItems = Math.ceil(Math.random() * 5);
+  const items = [];
+  for (let i = 0; i < randVariationItems; i += 1) {
+    items.push({
       name: faker.commerce.productName(),
       price: faker.commerce.price(),
       image: faker.image.imageUrl(),
+    });
+  }
+  return items;
+};
+
+const randomVariations = () => {
+  const randVariations = Math.ceil(Math.random() * 2);
+  const variations = [];
+  for (let i = 0; i < randVariations; i += 1) {
+    variations.push({
+      variationType: faker.random.word(),
+      variationItems: randomVariationItems(),
     });
   }
   return variations;
@@ -75,8 +86,11 @@ const seed = () => {
   }
 };
 
-seed();
-
 module.exports = {
+  randomInStock,
+  randomVariationItems,
+  randomVariations,
+  randomProtection,
+  randomOffers,
   seed,
 };

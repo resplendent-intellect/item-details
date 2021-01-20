@@ -9,6 +9,5 @@ describe('Render components', () => {
   });
 
   it('render title of App', () => {
-    expect(wrapper.find('h1').text()).toContain('Hello from App.jsx');
   });
 });
