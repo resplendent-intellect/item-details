@@ -23,6 +23,7 @@ module.exports = {
   rules: {
     'no-console': 0,
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'import/extensions': { jsx: 'always' },
+    'import/extensions': [0, { jsx: 'always' }],
+    'no-underscore-dangle': ['error', { allow: ['_id'] }],
   },
 };
