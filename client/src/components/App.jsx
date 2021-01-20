@@ -1,8 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
-import Price from './Price.jsx';
-import AllVariations from './AllVariations.jsx';
-import airPodsMax from './airPodsMaxData';
+import Price from './price-components/Price.jsx';
+import AllVariations from './variations-components/AllVariations.jsx';
+import airPodsMax from './data/airPodsMaxData';
 
 class App extends React.Component {
   constructor(props) {
