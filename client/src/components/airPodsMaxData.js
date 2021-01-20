@@ -1,7 +1,7 @@
 const faker = require('faker');
-const { Product } = require('../database/index');
 
-const airPodsMax = new Product({
+const airPodsMax = {
+  _id: 1,
   brand: 'Apple',
   name: 'AirPods Max',
   model: 'MGYH3AM/A',
@@ -9,28 +9,34 @@ const airPodsMax = new Product({
   sku: 6373460,
   price: 549.00,
   variations: [{
+    _id: 1,
     variationType: 'Color',
     variationItems: [{
+      _id: 0,
       name: 'Space Gray',
       price: 549.00,
       image: faker.image.imageUrl(),
     },
     {
+      _id: 1,
       name: 'Sky Blue',
       price: 549.00,
       image: faker.image.imageUrl(),
     },
     {
+      _id: 2,
       name: 'Green',
       price: 549.00,
       image: faker.image.imageUrl(),
     },
     {
+      _id: 3,
       name: 'Pink',
       price: 549.00,
       image: faker.image.imageUrl(),
     },
     {
+      _id: 4,
       name: 'Silver',
       price: 549.00,
       image: faker.image.imageUrl(),
@@ -52,9 +58,6 @@ const airPodsMax = new Product({
     name: 'Charger',
     price: 30.00,
   },
-});
+};
 
-airPodsMax.save()
-  .catch((err) => {
-    throw err;
-  });
+export default airPodsMax;
