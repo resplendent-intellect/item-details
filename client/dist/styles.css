@@ -20,6 +20,7 @@ img {
   flex-direction: row;
   /* position: absolute; */
   transition-duration: 0.5s;
+  position: relative;
 }
 
 .card {
@@ -28,12 +29,17 @@ img {
 }
 
 .cards-slider {
-  position: relative;
+  /* position: relative; */
   max-width: 400px;
-  overflow: hidden;
+  overflow: scroll;
   margin: 0 auto;
 }
 
 .slider-container {
   width: 200px;
+}
+
+.next {
+  position: absolute;
+  bottom: 0
 }

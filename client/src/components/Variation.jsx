@@ -29,18 +29,19 @@ const Variation = ({ variation }) => {
         {variationName}
       </div>
       <div className="cards-slider">
-        <button
-          className="button next"
-          type="button"
-          onClick={next}
-          disabled={variationItemIndex === itemsLastIndex}
-        >
-          &gt;
-        </button>
         <div
           className="cards-slider-wrapper"
           style={wrapperStyle}
         >
+          <div className="next">
+            <button
+              type="button"
+              onClick={next}
+              disabled={variationItemIndex === itemsLastIndex}
+            >
+              &gt;
+            </button>
+          </div>
           {variation.variationItems.map((item) => (
             <VariationItem
               key={item._id}
@@ -48,15 +49,15 @@ const Variation = ({ variation }) => {
               setVariationName={setVariationName}
             />
           ))}
+          <button
+            className="button prev"
+            type="button"
+            onClick={prev}
+            disabled={variationItemIndex === 0}
+          >
+            &lt;
+          </button>
         </div>
-        <button
-          className="button prev"
-          type="button"
-          onClick={prev}
-          disabled={variationItemIndex === 0}
-        >
-          &lt;
-        </button>
       </div>
     </div>
   );
