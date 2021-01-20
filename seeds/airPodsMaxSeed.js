@@ -8,38 +8,34 @@ const airPodsMax = new Product({
   color: 'Space Gray',
   sku: 6373460,
   price: 549.00,
-  variations: [
-    {
-      variationType: 'Color',
+  variations: [{
+    variationType: 'Color',
+    variationItems: [{
       name: 'Space Gray',
       price: 549.00,
       image: faker.image.imageUrl(),
     },
     {
-      variationType: 'Color',
       name: 'Sky Blue',
       price: 549.00,
       image: faker.image.imageUrl(),
     },
     {
-      variationType: 'Color',
       name: 'Green',
       price: 549.00,
       image: faker.image.imageUrl(),
     },
     {
-      variationType: 'Color',
       name: 'Pink',
       price: 549.00,
       image: faker.image.imageUrl(),
     },
     {
-      variationType: 'Color',
       name: 'Silver',
       price: 549.00,
       image: faker.image.imageUrl(),
-    },
-  ],
+    }],
+  }],
   protectionPlans: [
     {
       name: 'AppleCare+ for AirPods Max - 2 Year Plan',
