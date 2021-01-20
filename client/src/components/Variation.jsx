@@ -4,6 +4,21 @@ import VariationItem from './VariationItem.jsx';
 
 const Variation = ({ variation }) => {
   const [variationName, setVariationName] = useState();
+  const [variationItemIndex, setVariationItemIndex] = useState(0);
+  const itemsLastIndex = variation.variationItems.length - 1;
+
+  const wrapperStyle = {
+    transform: `translateX(-${variationItemIndex * (200 / variation.variationItems.length)}%)`,
+
+  };
+
+  const next = () => {
+    setVariationItemIndex(variationItemIndex + 1);
+  };
+
+  const prev = () => {
+    setVariationItemIndex(variationItemIndex - 1);
+  };
 
   return (
     <div>
@@ -13,14 +28,35 @@ const Variation = ({ variation }) => {
         {' '}
         {variationName}
       </div>
-      <div>
-        {variation.variationItems.map((item) => (
-          <VariationItem
-            key={item._id}
-            item={item}
-            setVariationName={setVariationName}
-          />
-        ))}
+      <div className="cards-slider">
+        <button
+          className="button next"
+          type="button"
+          onClick={next}
+          disabled={variationItemIndex === itemsLastIndex}
+        >
+          &gt;
+        </button>
+        <div
+          className="cards-slider-wrapper"
+          style={wrapperStyle}
+        >
+          {variation.variationItems.map((item) => (
+            <VariationItem
+              key={item._id}
+              item={item}
+              setVariationName={setVariationName}
+            />
+          ))}
+        </div>
+        <button
+          className="button prev"
+          type="button"
+          onClick={prev}
+          disabled={variationItemIndex === 0}
+        >
+          &lt;
+        </button>
       </div>
     </div>
   );
