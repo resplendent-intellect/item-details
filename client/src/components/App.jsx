@@ -1,5 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
+import Price from './Price.jsx';
+import AllVariations from './AllVariations.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,7 +10,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getProduct('60021bc40276d4416e8f8cf3');
+    this.getProduct('6007a3853fdca13bc5b1a2e5');
   }
 
   getProduct(id) {
@@ -18,7 +20,14 @@ class App extends React.Component {
   }
 
   render() {
-    return <h1>Hello from App.jsx</h1>;
+    const { price, variations } = this.state;
+    return (
+      <div>
+        <Price price={price} />
+        <hr />
+        <AllVariations variations={variations} />
+      </div>
+    );
   }
 }
 
