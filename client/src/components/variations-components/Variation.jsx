@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import VariationItem from './VariationItem.jsx';
+import styles from './Variation.module.css';
 
 const Variation = ({ variation }) => {
   const [variationName, setVariationName] = useState();
@@ -8,8 +9,7 @@ const Variation = ({ variation }) => {
   const itemsLastIndex = variation.variationItems.length - 1;
 
   const wrapperStyle = {
-    transform: `translateX(-${variationItemIndex * (200 / variation.variationItems.length)}%)`,
-
+    transform: `translateX(-${variationItemIndex * (100 / variation.variationItems.length)}%)`,
   };
 
   const next = () => {
@@ -22,26 +22,39 @@ const Variation = ({ variation }) => {
 
   return (
     <div>
-      <div>
-        {variation.variationType}
+      <div className={styles.variationAndType}>
+        <b>
+          {variation.variationType}
+        </b>
         :
         {' '}
         {variationName}
       </div>
-      <div className="cards-slider">
+      <div className={styles.cardsSlider}>
+        <div className={styles.next}>
+          <button
+            type="button"
+            className={styles.nextButton}
+            onClick={next}
+            disabled={variationItemIndex === itemsLastIndex}
+          >
+            &gt;
+          </button>
+        </div>
+        <div className={styles.prev}>
+          <button
+            type="button"
+            className={styles.prevButton}
+            onClick={prev}
+            disabled={variationItemIndex === 0}
+          >
+            &lt;
+          </button>
+        </div>
         <div
-          className="cards-slider-wrapper"
+          className={styles.cardsSliderWrapper}
           style={wrapperStyle}
         >
-          <div className="next">
-            <button
-              type="button"
-              onClick={next}
-              disabled={variationItemIndex === itemsLastIndex}
-            >
-              &gt;
-            </button>
-          </div>
           {variation.variationItems.map((item) => (
             <VariationItem
               key={item._id}
@@ -49,14 +62,6 @@ const Variation = ({ variation }) => {
               setVariationName={setVariationName}
             />
           ))}
-          <button
-            className="button prev"
-            type="button"
-            onClick={prev}
-            disabled={variationItemIndex === 0}
-          >
-            &lt;
-          </button>
         </div>
       </div>
     </div>
@@ -64,11 +69,7 @@ const Variation = ({ variation }) => {
 };
 
 Variation.propTypes = {
-  variation: PropTypes.instanceOf(Object),
-};
-
-Variation.defaultProps = {
-  variation: {},
+  variation: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default Variation;
