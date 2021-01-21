@@ -49,11 +49,13 @@ const airPodsMax = {
     },
   ],
   inStock: 'Backordered',
-  offers: [
-    { title: '1 Month of Pandora with Select Products' },
-    { title: '3 Months of TIDAL with Select Products' },
-
-  ],
+  offers: [{
+    offerType: 'Cardmember Offers',
+    offers: [
+      { title: '12 Month Financing' },
+      { title: 'Get rewards' },
+    ],
+  }],
   mightAlsoNeed: {
     name: 'Charger',
     price: 30.00,

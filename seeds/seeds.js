@@ -53,9 +53,8 @@ const randomOffers = () => {
   const offers = [];
   for (let i = 0; i < rand; i += 1) {
     offers.push({
-      title: 'Hot offer',
-      subtitle: faker.lorem.sentence(),
-      body: faker.lorem.paragraph(),
+      offerType: faker.lorem.word(),
+      offers: [{ title: faker.lorem.word() }],
     });
   }
   return offers;
