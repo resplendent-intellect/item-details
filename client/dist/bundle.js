@@ -8350,6 +8350,10 @@ var _Protection = __webpack_require__(1887);
 
 var _Protection2 = _interopRequireDefault(_Protection);
 
+var _StockShipping = __webpack_require__(1889);
+
+var _StockShipping2 = _interopRequireDefault(_StockShipping);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -8390,7 +8394,8 @@ var App = function (_React$Component) {
           price = _state.price,
           variations = _state.variations,
           protectionPlans = _state.protectionPlans,
-          name = _state.name;
+          name = _state.name,
+          inStock = _state.inStock;
 
       return _react2.default.createElement(
         'div',
@@ -8399,7 +8404,9 @@ var App = function (_React$Component) {
         _react2.default.createElement('hr', null),
         _react2.default.createElement(_AllVariations2.default, { variations: variations }),
         _react2.default.createElement('hr', null),
-        _react2.default.createElement(_Protection2.default, { protectionPlans: protectionPlans, name: name })
+        _react2.default.createElement(_Protection2.default, { protectionPlans: protectionPlans, name: name }),
+        _react2.default.createElement('hr', null),
+        _react2.default.createElement(_StockShipping2.default, { inStock: inStock })
       );
     }
   }]);
@@ -164539,6 +164546,84 @@ Plan.propTypes = {
 };
 
 exports.default = Plan;
+
+/***/ }),
+/* 1889 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(106);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var StockShipping = function StockShipping(_ref) {
+  var inStock = _ref.inStock;
+
+  if (inStock === 'sold out') {
+    return null;
+  }
+  var pickup = void 0;
+  var shipping = void 0;
+  if (inStock === 'Backordered') {
+    pickup = 'Not available for this item';
+    shipping = 'Should ship by tomorrow';
+  }
+  if (inStock === 'in stock') {
+    pickup = 'Order now for pickup tomorrow';
+    shipping = 'Get it by tomorrow';
+  }
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'div',
+      null,
+      inStock === 'in stock' ? 'Get it in 8 days' : inStock
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      'Pickup:',
+      ' ',
+      pickup
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      'FREE Shipping:',
+      ' ',
+      shipping
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'a',
+        { href: 'about:blank' },
+        'Estimates for 96789'
+      )
+    )
+  );
+};
+
+StockShipping.propTypes = {
+  inStock: _propTypes2.default.string.isRequired
+};
+
+exports.default = StockShipping;
 
 /***/ })
 /******/ ]);
