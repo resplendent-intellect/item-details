@@ -1,3 +1,62 @@
+.pricesContainer {
+  display: flex;
+}
+
 .price {
-  color: blue;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.returns {
+  height: 48px;
+}
+
+.or, .suggested, .returns {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.or {
+  align-self: center;
+  margin: 17px
+}
+
+.returns img {
+  width: 30px;
+  padding-right: 10px;
+}
+
+.monthly {
+  font-weight: 700;
+  font-size: 23px;
+}
+
+.showMeHow, .priceMatch{
+  color: #0457c8;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.learnMore {
+  color: #0457c8;
+  text-decoration: none;
+}
+
+.priceMatch {
+  background-image: url(https://assets.bbystatic.com/pricing/price/dist/client/images/41df2eb4f87654be1edd36dcdbdcefca.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  padding-left: 14.9px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.textContainer h3, .textContainer p {
+  margin: 0;
+  padding: 2px;
 }
