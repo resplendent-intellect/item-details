@@ -1,8 +1,10 @@
 import React from 'react';
 import $ from 'jquery';
-import Price from './Price.jsx';
-import AllVariations from './AllVariations.jsx';
-import airPodsMax from './airPodsMaxData';
+import Price from './price-components/Price.jsx';
+import AllVariations from './variations-components/AllVariations.jsx';
+import airPodsMax from './data/airPodsMaxData';
+import Protection from './protection-components/Protection.jsx';
+import StockShipping from './stock-shipping-components/StockShipping.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,13 +23,22 @@ class App extends React.Component {
   }
 
   render() {
-    const { price, variations } = this.state;
+    const {
+      price,
+      variations,
+      protectionPlans,
+      name,
+      inStock,
+    } = this.state;
     return (
       <div>
         <Price price={price} />
         <hr />
         <AllVariations variations={variations} />
         <hr />
+        <Protection protectionPlans={protectionPlans} name={name} />
+        <hr />
+        <StockShipping inStock={inStock} />
       </div>
     );
   }

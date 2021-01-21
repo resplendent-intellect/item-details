@@ -8334,17 +8334,25 @@ var _jquery = __webpack_require__(1865);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _Price = __webpack_require__(200);
+var _Price = __webpack_require__(1881);
 
 var _Price2 = _interopRequireDefault(_Price);
 
-var _AllVariations = __webpack_require__(199);
+var _AllVariations = __webpack_require__(1884);
 
 var _AllVariations2 = _interopRequireDefault(_AllVariations);
 
-var _airPodsMaxData = __webpack_require__(205);
+var _airPodsMaxData = __webpack_require__(1880);
 
 var _airPodsMaxData2 = _interopRequireDefault(_airPodsMaxData);
+
+var _Protection = __webpack_require__(1887);
+
+var _Protection2 = _interopRequireDefault(_Protection);
+
+var _StockShipping = __webpack_require__(1889);
+
+var _StockShipping2 = _interopRequireDefault(_StockShipping);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8384,7 +8392,10 @@ var App = function (_React$Component) {
     value: function render() {
       var _state = this.state,
           price = _state.price,
-          variations = _state.variations;
+          variations = _state.variations,
+          protectionPlans = _state.protectionPlans,
+          name = _state.name,
+          inStock = _state.inStock;
 
       return _react2.default.createElement(
         'div',
@@ -8392,7 +8403,10 @@ var App = function (_React$Component) {
         _react2.default.createElement(_Price2.default, { price: price }),
         _react2.default.createElement('hr', null),
         _react2.default.createElement(_AllVariations2.default, { variations: variations }),
-        _react2.default.createElement('hr', null)
+        _react2.default.createElement('hr', null),
+        _react2.default.createElement(_Protection2.default, { protectionPlans: protectionPlans, name: name }),
+        _react2.default.createElement('hr', null),
+        _react2.default.createElement(_StockShipping2.default, { inStock: inStock })
       );
     }
   }]);
@@ -8461,427 +8475,13 @@ if (process.env.NODE_ENV === 'production') {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)))
 
 /***/ }),
-/* 199 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(37);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(106);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _Variation = __webpack_require__(203);
-
-var _Variation2 = _interopRequireDefault(_Variation);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var AllVariations = function AllVariations(_ref) {
-  var variations = _ref.variations;
-  return _react2.default.createElement(
-    'div',
-    null,
-    variations.map(function (variation) {
-      return _react2.default.createElement(_Variation2.default, {
-        key: variation._id,
-        variation: variation
-      });
-    })
-  );
-};
-
-AllVariations.propTypes = {
-  variations: _propTypes2.default.instanceOf(Array)
-};
-
-AllVariations.defaultProps = {
-  variations: []
-};
-exports.default = AllVariations;
-
-/***/ }),
-/* 200 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(37);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(106);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _PriceMatch = __webpack_require__(201);
-
-var _PriceMatch2 = _interopRequireDefault(_PriceMatch);
-
-var _Returns = __webpack_require__(202);
-
-var _Returns2 = _interopRequireDefault(_Returns);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Price = function Price(_ref) {
-  var price = _ref.price;
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(_PriceMatch2.default, null),
-    _react2.default.createElement(
-      'div',
-      null,
-      '$',
-      price.toFixed(2)
-    ),
-    'or',
-    _react2.default.createElement(
-      'div',
-      null,
-      '$',
-      (price / 12).toFixed(2),
-      '/mo. * suggested payments with 12-Month Financing'
-    ),
-    _react2.default.createElement(
-      'a',
-      { href: 'http://localhost:3000' },
-      'Show me how >'
-    ),
-    _react2.default.createElement(_Returns2.default, null)
-  );
-};
-
-Price.propTypes = {
-  price: _propTypes2.default.number
-};
-
-Price.defaultProps = {
-  price: 100
-};
-
-exports.default = Price;
-
-/***/ }),
-/* 201 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(37);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var PriceMatch = function PriceMatch() {
-  return _react2.default.createElement(
-    "div",
-    null,
-    _react2.default.createElement(
-      "a",
-      { href: "http://localhost:3000" },
-      "Price Match Guarantee"
-    )
-  );
-};
-
-exports.default = PriceMatch;
-
-/***/ }),
-/* 202 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(37);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Returns = function Returns() {
-  return _react2.default.createElement(
-    "div",
-    { id: "returns" },
-    _react2.default.createElement(
-      "h4",
-      null,
-      "15-DAY FREE & EASY RETURNS"
-    ),
-    _react2.default.createElement(
-      "p",
-      null,
-      "Guest shoppers get 15 days to return or exchange this item. Log in for personalized information.",
-      _react2.default.createElement(
-        "a",
-        { href: "http://localhost:3000" },
-        "Learn more >"
-      )
-    )
-  );
-};
-
-exports.default = Returns;
-
-/***/ }),
-/* 203 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-var _react = __webpack_require__(37);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(106);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _VariationItem = __webpack_require__(204);
-
-var _VariationItem2 = _interopRequireDefault(_VariationItem);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Variation = function Variation(_ref) {
-  var variation = _ref.variation;
-
-  var _useState = (0, _react.useState)(),
-      _useState2 = _slicedToArray(_useState, 2),
-      variationName = _useState2[0],
-      setVariationName = _useState2[1];
-
-  var _useState3 = (0, _react.useState)(0),
-      _useState4 = _slicedToArray(_useState3, 2),
-      variationItemIndex = _useState4[0],
-      setVariationItemIndex = _useState4[1];
-
-  var itemsLastIndex = variation.variationItems.length - 1;
-
-  var wrapperStyle = {
-    transform: 'translateX(-' + variationItemIndex * (200 / variation.variationItems.length) + '%)'
-
-  };
-
-  var next = function next() {
-    setVariationItemIndex(variationItemIndex + 1);
-  };
-
-  var prev = function prev() {
-    setVariationItemIndex(variationItemIndex - 1);
-  };
-
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'div',
-      null,
-      variation.variationType,
-      ':',
-      ' ',
-      variationName
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'cards-slider' },
-      _react2.default.createElement(
-        'div',
-        {
-          className: 'cards-slider-wrapper',
-          style: wrapperStyle
-        },
-        _react2.default.createElement(
-          'div',
-          { className: 'next' },
-          _react2.default.createElement(
-            'button',
-            {
-              type: 'button',
-              onClick: next,
-              disabled: variationItemIndex === itemsLastIndex
-            },
-            '>'
-          )
-        ),
-        variation.variationItems.map(function (item) {
-          return _react2.default.createElement(_VariationItem2.default, {
-            key: item._id,
-            item: item,
-            setVariationName: setVariationName
-          });
-        }),
-        _react2.default.createElement(
-          'button',
-          {
-            className: 'button prev',
-            type: 'button',
-            onClick: prev,
-            disabled: variationItemIndex === 0
-          },
-          '<'
-        )
-      )
-    )
-  );
-};
-
-Variation.propTypes = {
-  variation: _propTypes2.default.instanceOf(Object)
-};
-
-Variation.defaultProps = {
-  variation: {}
-};
-
-exports.default = Variation;
-
-/***/ }),
-/* 204 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(37);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(106);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var VariationItem = function VariationItem(_ref) {
-  var item = _ref.item,
-      setVariationName = _ref.setVariationName;
-  return _react2.default.createElement(
-    'div',
-    {
-      onMouseEnter: function onMouseEnter() {
-        setVariationName(item.name);
-      },
-      className: 'card'
-    },
-    _react2.default.createElement('img', { src: item.image, alt: item.name }),
-    item.price.toFixed(2)
-  );
-};
-
-VariationItem.propTypes = {
-  item: _propTypes2.default.instanceOf(Object),
-  setVariationName: _propTypes2.default.instanceOf(Function)
-};
-
-VariationItem.defaultProps = {
-  item: {},
-  setVariationName: function setVariationName() {}
-};
-
-exports.default = VariationItem;
-
-/***/ }),
-/* 205 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var faker = __webpack_require__(136);
-
-var airPodsMax = {
-  _id: 1,
-  brand: 'Apple',
-  name: 'AirPods Max',
-  model: 'MGYH3AM/A',
-  color: 'Space Gray',
-  sku: 6373460,
-  price: 549.00,
-  variations: [{
-    _id: 1,
-    variationType: 'Color',
-    variationItems: [{
-      _id: 0,
-      name: 'Space Gray',
-      price: 549.00,
-      image: faker.image.imageUrl()
-    }, {
-      _id: 1,
-      name: 'Sky Blue',
-      price: 549.00,
-      image: faker.image.imageUrl()
-    }, {
-      _id: 2,
-      name: 'Green',
-      price: 549.00,
-      image: faker.image.imageUrl()
-    }, {
-      _id: 3,
-      name: 'Pink',
-      price: 549.00,
-      image: faker.image.imageUrl()
-    }, {
-      _id: 4,
-      name: 'Silver',
-      price: 549.00,
-      image: faker.image.imageUrl()
-    }]
-  }],
-  protectionPlans: [{
-    name: 'AppleCare+ for AirPods Max - 2 Year Plan',
-    price: 59.00
-  }],
-  inStock: 'Backordered',
-  offers: [{ title: '1 Month of Pandora with Select Products' }, { title: '3 Months of TIDAL with Select Products' }],
-  mightAlsoNeed: {
-    name: 'Charger',
-    price: 30.00
-  }
-};
-
-exports.default = airPodsMax;
-
-/***/ }),
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
 /* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -164407,6 +164007,623 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+/* 1880 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var faker = __webpack_require__(136);
+
+var airPodsMax = {
+  _id: 1,
+  brand: 'Apple',
+  name: 'AirPods Max',
+  model: 'MGYH3AM/A',
+  color: 'Space Gray',
+  sku: 6373460,
+  price: 549.00,
+  variations: [{
+    _id: 1,
+    variationType: 'Color',
+    variationItems: [{
+      _id: 0,
+      name: 'Space Gray',
+      price: 549.00,
+      image: faker.image.imageUrl()
+    }, {
+      _id: 1,
+      name: 'Sky Blue',
+      price: 549.00,
+      image: faker.image.imageUrl()
+    }, {
+      _id: 2,
+      name: 'Green',
+      price: 549.00,
+      image: faker.image.imageUrl()
+    }, {
+      _id: 3,
+      name: 'Pink',
+      price: 549.00,
+      image: faker.image.imageUrl()
+    }, {
+      _id: 4,
+      name: 'Silver',
+      price: 549.00,
+      image: faker.image.imageUrl()
+    }]
+  }],
+  protectionPlans: [{
+    name: 'AppleCare+ for AirPods Max - 2 Year Plan',
+    price: 59.00
+  }],
+  inStock: 'Backordered',
+  offers: [{ title: '1 Month of Pandora with Select Products' }, { title: '3 Months of TIDAL with Select Products' }],
+  mightAlsoNeed: {
+    name: 'Charger',
+    price: 30.00
+  }
+};
+
+exports.default = airPodsMax;
+
+/***/ }),
+/* 1881 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(106);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _PriceMatch = __webpack_require__(1882);
+
+var _PriceMatch2 = _interopRequireDefault(_PriceMatch);
+
+var _Returns = __webpack_require__(1883);
+
+var _Returns2 = _interopRequireDefault(_Returns);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Price = function Price(_ref) {
+  var price = _ref.price;
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(_PriceMatch2.default, null),
+    _react2.default.createElement(
+      'div',
+      null,
+      '$',
+      price.toFixed(2)
+    ),
+    'or',
+    _react2.default.createElement(
+      'div',
+      null,
+      '$',
+      (price / 12).toFixed(2),
+      '/mo. * suggested payments with 12-Month Financing'
+    ),
+    _react2.default.createElement(
+      'a',
+      { href: 'http://localhost:3000' },
+      'Show me how >'
+    ),
+    _react2.default.createElement(_Returns2.default, null)
+  );
+};
+
+Price.propTypes = {
+  price: _propTypes2.default.number
+};
+
+Price.defaultProps = {
+  price: 100
+};
+
+exports.default = Price;
+
+/***/ }),
+/* 1882 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var PriceMatch = function PriceMatch() {
+  return _react2.default.createElement(
+    "div",
+    null,
+    _react2.default.createElement(
+      "a",
+      { href: "http://localhost:3000" },
+      "Price Match Guarantee"
+    )
+  );
+};
+
+exports.default = PriceMatch;
+
+/***/ }),
+/* 1883 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Returns = function Returns() {
+  return _react2.default.createElement(
+    "div",
+    { id: "returns" },
+    _react2.default.createElement(
+      "h4",
+      null,
+      "15-DAY FREE & EASY RETURNS"
+    ),
+    _react2.default.createElement(
+      "p",
+      null,
+      "Guest shoppers get 15 days to return or exchange this item. Log in for personalized information.",
+      _react2.default.createElement(
+        "a",
+        { href: "http://localhost:3000" },
+        "Learn more >"
+      )
+    )
+  );
+};
+
+exports.default = Returns;
+
+/***/ }),
+/* 1884 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(106);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Variation = __webpack_require__(1885);
+
+var _Variation2 = _interopRequireDefault(_Variation);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var AllVariations = function AllVariations(_ref) {
+  var variations = _ref.variations;
+  return _react2.default.createElement(
+    'div',
+    null,
+    variations.map(function (variation) {
+      return _react2.default.createElement(_Variation2.default, {
+        key: variation._id,
+        variation: variation
+      });
+    })
+  );
+};
+
+AllVariations.propTypes = {
+  variations: _propTypes2.default.instanceOf(Array)
+};
+
+AllVariations.defaultProps = {
+  variations: []
+};
+exports.default = AllVariations;
+
+/***/ }),
+/* 1885 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(106);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _VariationItem = __webpack_require__(1886);
+
+var _VariationItem2 = _interopRequireDefault(_VariationItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Variation = function Variation(_ref) {
+  var variation = _ref.variation;
+
+  var _useState = (0, _react.useState)(),
+      _useState2 = _slicedToArray(_useState, 2),
+      variationName = _useState2[0],
+      setVariationName = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      variationItemIndex = _useState4[0],
+      setVariationItemIndex = _useState4[1];
+
+  var itemsLastIndex = variation.variationItems.length - 1;
+
+  var wrapperStyle = {
+    transform: 'translateX(-' + variationItemIndex * (200 / variation.variationItems.length) + '%)'
+
+  };
+
+  var next = function next() {
+    setVariationItemIndex(variationItemIndex + 1);
+  };
+
+  var prev = function prev() {
+    setVariationItemIndex(variationItemIndex - 1);
+  };
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'div',
+      null,
+      variation.variationType,
+      ':',
+      ' ',
+      variationName
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'cards-slider' },
+      _react2.default.createElement(
+        'div',
+        {
+          className: 'cards-slider-wrapper',
+          style: wrapperStyle
+        },
+        _react2.default.createElement(
+          'div',
+          { className: 'next' },
+          _react2.default.createElement(
+            'button',
+            {
+              type: 'button',
+              onClick: next,
+              disabled: variationItemIndex === itemsLastIndex
+            },
+            '>'
+          )
+        ),
+        variation.variationItems.map(function (item) {
+          return _react2.default.createElement(_VariationItem2.default, {
+            key: item._id,
+            item: item,
+            setVariationName: setVariationName
+          });
+        }),
+        _react2.default.createElement(
+          'button',
+          {
+            className: 'button prev',
+            type: 'button',
+            onClick: prev,
+            disabled: variationItemIndex === 0
+          },
+          '<'
+        )
+      )
+    )
+  );
+};
+
+Variation.propTypes = {
+  variation: _propTypes2.default.instanceOf(Object)
+};
+
+Variation.defaultProps = {
+  variation: {}
+};
+
+exports.default = Variation;
+
+/***/ }),
+/* 1886 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(106);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var VariationItem = function VariationItem(_ref) {
+  var item = _ref.item,
+      setVariationName = _ref.setVariationName;
+  return _react2.default.createElement(
+    'div',
+    {
+      onMouseEnter: function onMouseEnter() {
+        setVariationName(item.name);
+      },
+      className: 'card'
+    },
+    _react2.default.createElement('img', { src: item.image, alt: item.name }),
+    item.price.toFixed(2)
+  );
+};
+
+VariationItem.propTypes = {
+  item: _propTypes2.default.instanceOf(Object),
+  setVariationName: _propTypes2.default.instanceOf(Function)
+};
+
+VariationItem.defaultProps = {
+  item: {},
+  setVariationName: function setVariationName() {}
+};
+
+exports.default = VariationItem;
+
+/***/ }),
+/* 1887 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(106);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Plan = __webpack_require__(1888);
+
+var _Plan2 = _interopRequireDefault(_Plan);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Protection = function Protection(_ref) {
+  var protectionPlans = _ref.protectionPlans,
+      name = _ref.name;
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'h3',
+        null,
+        'Protection for your',
+        ' ',
+        name
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      protectionPlans.map(function (plan) {
+        return _react2.default.createElement(_Plan2.default, { plan: plan });
+      })
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'a',
+        { href: 'about:blank' },
+        'Learn more'
+      )
+    )
+  );
+};
+
+Protection.propTypes = {
+  protectionPlans: _propTypes2.default.instanceOf(Array).isRequired,
+  name: _propTypes2.default.string.isRequired
+};
+
+exports.default = Protection;
+
+/***/ }),
+/* 1888 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(106);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Plan = function Plan(_ref) {
+  var plan = _ref.plan;
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement('input', { type: 'checkbox' }),
+    _react2.default.createElement(
+      'div',
+      null,
+      plan.name
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      '$',
+      plan.price.toFixed(2),
+      'About $',
+      (plan.price / 12).toFixed(2),
+      '/mo'
+    )
+  );
+};
+
+Plan.propTypes = {
+  plan: _propTypes2.default.instanceOf(Object).isRequired
+};
+
+exports.default = Plan;
+
+/***/ }),
+/* 1889 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(106);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var StockShipping = function StockShipping(_ref) {
+  var inStock = _ref.inStock;
+
+  if (inStock === 'sold out') {
+    return null;
+  }
+  var pickup = void 0;
+  var shipping = void 0;
+  if (inStock === 'Backordered') {
+    pickup = 'Not available for this item';
+    shipping = 'Should ship by tomorrow';
+  }
+  if (inStock === 'in stock') {
+    pickup = 'Order now for pickup tomorrow';
+    shipping = 'Get it by tomorrow';
+  }
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'div',
+      null,
+      inStock === 'in stock' ? 'Get it in 8 days' : inStock
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      'Pickup:',
+      ' ',
+      pickup
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      'FREE Shipping:',
+      ' ',
+      shipping
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'a',
+        { href: 'about:blank' },
+        'Estimates for 96789'
+      )
+    )
+  );
+};
+
+StockShipping.propTypes = {
+  inStock: _propTypes2.default.string.isRequired
+};
+
+exports.default = StockShipping;
 
 /***/ })
 /******/ ]);
