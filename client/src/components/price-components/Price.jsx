@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PriceMatch from './PriceMatch.jsx';
 import Returns from './Returns.jsx';
+import styles from './Price.module.css';
 
 const Price = ({ price }) => (
   <div>
     <PriceMatch />
-    <div>
+    <div className={styles.price}>
       $
       {price.toFixed(2)}
     </div>
