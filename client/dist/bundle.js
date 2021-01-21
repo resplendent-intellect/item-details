@@ -8346,6 +8346,10 @@ var _airPodsMaxData = __webpack_require__(1880);
 
 var _airPodsMaxData2 = _interopRequireDefault(_airPodsMaxData);
 
+var _Protection = __webpack_require__(1887);
+
+var _Protection2 = _interopRequireDefault(_Protection);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -8384,7 +8388,9 @@ var App = function (_React$Component) {
     value: function render() {
       var _state = this.state,
           price = _state.price,
-          variations = _state.variations;
+          variations = _state.variations,
+          protectionPlans = _state.protectionPlans,
+          name = _state.name;
 
       return _react2.default.createElement(
         'div',
@@ -8392,7 +8398,8 @@ var App = function (_React$Component) {
         _react2.default.createElement(_Price2.default, { price: price }),
         _react2.default.createElement('hr', null),
         _react2.default.createElement(_AllVariations2.default, { variations: variations }),
-        _react2.default.createElement('hr', null)
+        _react2.default.createElement('hr', null),
+        _react2.default.createElement(_Protection2.default, { protectionPlans: protectionPlans, name: name })
       );
     }
   }]);
@@ -164414,6 +164421,124 @@ VariationItem.defaultProps = {
 };
 
 exports.default = VariationItem;
+
+/***/ }),
+/* 1887 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(106);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Plan = __webpack_require__(1888);
+
+var _Plan2 = _interopRequireDefault(_Plan);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Protection = function Protection(_ref) {
+  var protectionPlans = _ref.protectionPlans,
+      name = _ref.name;
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'h3',
+        null,
+        'Protection for your',
+        ' ',
+        name
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      protectionPlans.map(function (plan) {
+        return _react2.default.createElement(_Plan2.default, { plan: plan });
+      })
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'a',
+        { href: 'about:blank' },
+        'Learn more'
+      )
+    )
+  );
+};
+
+Protection.propTypes = {
+  protectionPlans: _propTypes2.default.instanceOf(Array).isRequired,
+  name: _propTypes2.default.string.isRequired
+};
+
+exports.default = Protection;
+
+/***/ }),
+/* 1888 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(106);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Plan = function Plan(_ref) {
+  var plan = _ref.plan;
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement('input', { type: 'checkbox' }),
+    _react2.default.createElement(
+      'div',
+      null,
+      plan.name
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      '$',
+      plan.price.toFixed(2),
+      'About $',
+      (plan.price / 12).toFixed(2),
+      '/mo'
+    )
+  );
+};
+
+Plan.propTypes = {
+  plan: _propTypes2.default.instanceOf(Object).isRequired
+};
+
+exports.default = Plan;
 
 /***/ })
 /******/ ]);

@@ -3,6 +3,7 @@ import $ from 'jquery';
 import Price from './price-components/Price.jsx';
 import AllVariations from './variations-components/AllVariations.jsx';
 import airPodsMax from './data/airPodsMaxData';
+import Protection from './protection-components/Protection.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -21,13 +22,14 @@ class App extends React.Component {
   }
 
   render() {
-    const { price, variations } = this.state;
+    const { price, variations, protectionPlans, name } = this.state;
     return (
       <div>
         <Price price={price} />
         <hr />
         <AllVariations variations={variations} />
         <hr />
+        <Protection protectionPlans={protectionPlans} name={name} />
       </div>
     );
   }
