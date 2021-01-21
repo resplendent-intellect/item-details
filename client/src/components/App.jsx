@@ -5,6 +5,8 @@ import AllVariations from './variations-components/AllVariations.jsx';
 import airPodsMax from './data/airPodsMaxData';
 import Protection from './protection-components/Protection.jsx';
 import StockShipping from './stock-shipping-components/StockShipping.jsx';
+import AddToCart from './addtocart-components/AddToCart.jsx';
+import Offers from './offers-components/Offers.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -29,6 +31,7 @@ class App extends React.Component {
       protectionPlans,
       name,
       inStock,
+      offers,
     } = this.state;
     return (
       <div>
@@ -39,6 +42,10 @@ class App extends React.Component {
         <Protection protectionPlans={protectionPlans} name={name} />
         <hr />
         <StockShipping inStock={inStock} />
+        <hr />
+        <AddToCart />
+        <hr />
+        <Offers offers={offers} />
       </div>
     );
   }

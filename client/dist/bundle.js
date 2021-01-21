@@ -8354,6 +8354,14 @@ var _StockShipping = __webpack_require__(1889);
 
 var _StockShipping2 = _interopRequireDefault(_StockShipping);
 
+var _AddToCart = __webpack_require__(1890);
+
+var _AddToCart2 = _interopRequireDefault(_AddToCart);
+
+var _Offers = __webpack_require__(1891);
+
+var _Offers2 = _interopRequireDefault(_Offers);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -8395,7 +8403,8 @@ var App = function (_React$Component) {
           variations = _state.variations,
           protectionPlans = _state.protectionPlans,
           name = _state.name,
-          inStock = _state.inStock;
+          inStock = _state.inStock,
+          offers = _state.offers;
 
       return _react2.default.createElement(
         'div',
@@ -8406,7 +8415,11 @@ var App = function (_React$Component) {
         _react2.default.createElement('hr', null),
         _react2.default.createElement(_Protection2.default, { protectionPlans: protectionPlans, name: name }),
         _react2.default.createElement('hr', null),
-        _react2.default.createElement(_StockShipping2.default, { inStock: inStock })
+        _react2.default.createElement(_StockShipping2.default, { inStock: inStock }),
+        _react2.default.createElement('hr', null),
+        _react2.default.createElement(_AddToCart2.default, null),
+        _react2.default.createElement('hr', null),
+        _react2.default.createElement(_Offers2.default, { offers: offers })
       );
     }
   }]);
@@ -164063,7 +164076,10 @@ var airPodsMax = {
     price: 59.00
   }],
   inStock: 'Backordered',
-  offers: [{ title: '1 Month of Pandora with Select Products' }, { title: '3 Months of TIDAL with Select Products' }],
+  offers: [{
+    offerType: 'Cardmember Offers',
+    offers: [{ title: '12 Month Financing' }, { title: 'Get rewards' }]
+  }],
   mightAlsoNeed: {
     name: 'Charger',
     price: 30.00
@@ -164624,6 +164640,106 @@ StockShipping.propTypes = {
 };
 
 exports.default = StockShipping;
+
+/***/ }),
+/* 1890 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var AddToCart = function AddToCart() {
+  return _react2.default.createElement(
+    "div",
+    null,
+    _react2.default.createElement(
+      "button",
+      { type: "button" },
+      "Add to Cart"
+    ),
+    _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement("input", { type: "checkbox" }),
+      "Compare"
+    ),
+    _react2.default.createElement(
+      "div",
+      null,
+      _react2.default.createElement("input", { type: "checkbox" }),
+      "Save"
+    )
+  );
+};
+
+exports.default = AddToCart;
+
+/***/ }),
+/* 1891 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(37);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(106);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Offers = function Offers(_ref) {
+  var offers = _ref.offers;
+  return _react2.default.createElement(
+    'div',
+    null,
+    offers.map(function (offer) {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h5',
+          null,
+          offer.offerType
+        ),
+        offer.offers.map(function (item) {
+          return _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'a',
+              { href: 'about:blank' },
+              item.title
+            )
+          );
+        })
+      );
+    })
+  );
+};
+
+Offers.propTypes = {
+  offers: _propTypes2.default.instanceOf(Array).isRequired
+};
+
+exports.default = Offers;
 
 /***/ })
 /******/ ]);

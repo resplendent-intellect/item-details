@@ -27,7 +27,12 @@ const productSchema = new mongoose.Schema({
   }],
   protectionPlans: [{ name: String, price: Number }],
   inStock: String,
-  offers: [{ title: String, subtitle: String, body: String }],
+  offers: [{
+    offerType: String,
+    offers: [
+      { title: String },
+    ],
+  }],
   mightAlsoNeed: [{ name: String, price: Number }],
 });
 
