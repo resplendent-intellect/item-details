@@ -4,10 +4,12 @@ import VariationItem from './VariationItem.jsx';
 import styles from './Variation.module.css';
 
 const Variation = ({ variation }) => {
+  // const initialVariationName = variation.variationItems[0].name;
   const [variationName, setVariationName] = useState();
   const [variationItemIndex, setVariationItemIndex] = useState(0);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
+  // const [defaultVariation, setDefaultVariation] = useState(initialVariationName);
 
   const wrapperStyle = {
     // transform: `translateX(-${variationItemIndex * (100 / variation.variationItems.length)}%)`,

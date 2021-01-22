@@ -78,6 +78,11 @@
   justify-content: center;
 }
 
+.card:hover {
+  border: 1px solid #0457c8;
+  cursor: pointer;
+}
+
 .thumbnail {
   width: 58px;
   height: 64px;
