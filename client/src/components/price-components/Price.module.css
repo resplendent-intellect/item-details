@@ -9,6 +9,12 @@
 
 .returns {
   height: 48px;
+  align-items: center;
+  background: #f4f6f9;
+  display: flex;
+  flex-direction: row;
+  margin: 8px 0;
+  padding: 12px 8px;
 }
 
 .or, .suggested, .returns {

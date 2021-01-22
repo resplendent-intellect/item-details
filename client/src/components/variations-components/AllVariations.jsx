@@ -14,10 +14,7 @@ const AllVariations = ({ variations }) => (
 );
 
 AllVariations.propTypes = {
-  variations: PropTypes.instanceOf(Array),
+  variations: PropTypes.instanceOf(Array).isRequired,
 };
 
-AllVariations.defaultProps = {
-  variations: [],
-};
 export default AllVariations;

@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import VariationItem from './VariationItem.jsx';
+import styles from './Variation.module.css';
 
 const Variation = ({ variation }) => {
+  // const initialVariationName = variation.variationItems[0].name;
   const [variationName, setVariationName] = useState();
   const [variationItemIndex, setVariationItemIndex] = useState(0);
-  const itemsLastIndex = variation.variationItems.length - 1;
+  const [showLeftButton, setShowLeftButton] = useState(false);
+  const [showRightButton, setShowRightButton] = useState(true);
+  // const [defaultVariation, setDefaultVariation] = useState(initialVariationName);
 
   const wrapperStyle = {
-    transform: `translateX(-${variationItemIndex * (200 / variation.variationItems.length)}%)`,
-
+    // transform: `translateX(-${variationItemIndex * (100 / variation.variationItems.length)}%)`,
+    transform: `translateX(-${variationItemIndex * (86 * (variation.variationItems.length - 4))}px)`,
   };
 
   const next = () => {
@@ -20,28 +24,56 @@ const Variation = ({ variation }) => {
     setVariationItemIndex(variationItemIndex - 1);
   };
 
+  const leftButton = (
+    <button
+      type="button"
+      className={styles.prevButton}
+      onClick={() => {
+        prev();
+        setShowLeftButton(false);
+        setShowRightButton(true);
+      }}
+      disabled={variationItemIndex === 0}
+    >
+      &lt;
+    </button>
+  );
+
+  const rightButton = (
+    <button
+      type="button"
+      className={styles.nextButton}
+      onClick={() => {
+        next();
+        setShowLeftButton(true);
+        setShowRightButton(false);
+      }}
+    >
+      &gt;
+    </button>
+  );
+
   return (
     <div>
-      <div>
-        {variation.variationType}
+      <div className={styles.variationAndType}>
+        <b>
+          {variation.variationType}
+        </b>
         :
         {' '}
         {variationName}
       </div>
-      <div className="cards-slider">
+      <div className={styles.cardsSlider}>
+        <div className={styles.prev}>
+          {showLeftButton ? leftButton : null}
+        </div>
+        <div className={styles.next}>
+          {showRightButton ? rightButton : null}
+        </div>
         <div
-          className="cards-slider-wrapper"
+          className={styles.cardsSliderWrapper}
           style={wrapperStyle}
         >
-          <div className="next">
-            <button
-              type="button"
-              onClick={next}
-              disabled={variationItemIndex === itemsLastIndex}
-            >
-              &gt;
-            </button>
-          </div>
           {variation.variationItems.map((item) => (
             <VariationItem
               key={item._id}
@@ -49,14 +81,6 @@ const Variation = ({ variation }) => {
               setVariationName={setVariationName}
             />
           ))}
-          <button
-            className="button prev"
-            type="button"
-            onClick={prev}
-            disabled={variationItemIndex === 0}
-          >
-            &lt;
-          </button>
         </div>
       </div>
     </div>
@@ -64,11 +88,7 @@ const Variation = ({ variation }) => {
 };
 
 Variation.propTypes = {
-  variation: PropTypes.instanceOf(Object),
-};
-
-Variation.defaultProps = {
-  variation: {},
+  variation: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default Variation;
