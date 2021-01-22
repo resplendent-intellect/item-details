@@ -13,7 +13,8 @@ const VariationItem = ({ item, setVariationName }) => (
         alt={item.name}
         className={styles.thumbnail}
       />
-      <div>
+      <div className={styles.price}>
+        $
         {item.price.toFixed(2)}
       </div>
     </div>
