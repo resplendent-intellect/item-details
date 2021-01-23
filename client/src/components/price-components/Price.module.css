@@ -66,3 +66,7 @@
   margin: 0;
   padding: 2px;
 }
+
+.showMeHow:hover, .learnMore:hover {
+  color: #001E73;
+}

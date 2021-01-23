@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Variation from './Variation.jsx';
+import styles from './Variation.module.css';
 
 const AllVariations = ({ variations }) => (
-  <div>
+  <div className={styles.variationsContainer}>
     {variations.map((variation) => (
       <Variation
         key={variation._id}
