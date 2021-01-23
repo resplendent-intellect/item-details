@@ -1,0 +1,25 @@
+.offersContainer {
+  width: 100%;
+}
+
+.offersAndType {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 90px;
+}
+
+.offersAndType h5 {
+  margin: 0;
+}
+
+.offerTitle a{
+  color: #0457C8;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.offerTitle a:hover {
+  color: #001e73;
+  text-decoration: underline;
+}
