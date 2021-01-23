@@ -1,0 +1,61 @@
+.stockShippingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 111px;
+}
+
+.inStock {
+  font-size: 13px;
+  font-weight: 700;
+  color: #96291A;
+  margin-bottom: 5px;
+}
+
+.pickup, .freeShipping {
+  font-size: 13px;
+}
+
+.shippingContainer, .pickupContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.shippingContainer {
+  align-items: flex-start;
+}
+
+.pickupContainer {
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.svgContainer {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+}
+
+.pickupContainer .svg {
+  width: 20px;
+  height: 20px;
+}
+
+.shippingContainer .svg {
+  width: 30px;
+  height: 30px;
+}
+
+.estimates {
+  font-size: 11px;
+  color: #0457c8;
+  text-decoration: none;
+}
+
+.estimates:hover {
+  cursor: pointer;
+  color: #001E73;
+}
