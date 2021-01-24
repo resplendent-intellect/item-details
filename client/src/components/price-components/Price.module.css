@@ -50,7 +50,7 @@
 }
 
 .priceMatch {
-  background-image: url(https://assets.bbystatic.com/pricing/price/dist/client/images/41df2eb4f87654be1edd36dcdbdcefca.svg);
+  background-image: url(https://bigbrain-itemdetails.s3-us-west-1.amazonaws.com/dollarsignpricematch.svg);
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
@@ -69,4 +69,110 @@
 
 .showMeHow:hover, .learnMore:hover {
   color: #001E73;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  z-index: 4;
+  margin: 100px
+}
+
+.x {
+  position: fixed;
+  right: 15px;
+  top: 10px;
+  color: #0046BE;
+}
+
+.x:hover {
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+.popup {
+  position: absolute;
+  transform: translate(-107%, -8%);
+  border: 1px solid #c5cbd5;
+  box-shadow: 0 0 2px 0 rgb(0 0 0 / 30%);
+  border-radius: 4px;
+  z-index: 999;
+  width: 320px;
+  height: 480px;
+}
+
+.popupTriangle {
+  content: '';
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: -18px;
+  top: 9%;
+  transform: translateX(-50%) rotate(
+45deg
+);
+  border-top: 2px solid #c5cbd5;
+  border-right: 2px solid #c5cbd5;
+  border-left: none;
+  border-bottom: none;
+  background-color: #FFF;
+}
+
+.popupX {
+  position: fixed;
+  right: 15px;
+  top: 10px;
+  color: #0046BE;
+}
+
+.popupX:hover {
+  cursor: pointer;
+}
+
+.popupTitleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.dollarSignContainer {
+  padding-right: 5px;
+}
+
+.dollarSignContainer img {
+  height: 30px;
+  width: 25px;
+}
+
+.pmg {
+  font-size: 20px;
+  color: #0046BE;
+  padding: none;
+}
+
+.pmgParagraph {
+  font-size: 13px;
+  margin: 10px;
+}
+
+.seeDetails {
+  color: #0046BE;
+}
+
+.seeDetails:hover {
+  color: #001e73;
+  cursor: pointer;
 }
