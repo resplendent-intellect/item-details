@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
+import EstimatesPopup from './EstimatesPopup.jsx';
 import styles from './StockShipping.module.css';
 
 const StockShipping = ({ inStock }) => {
+  const [showEstimatesPopup, setShowEstimatesPopup] = useState(false);
+  const popupRef = useRef();
+
+  const handleOutsideClick = (e) => {
+    if (!popupRef.current.contains(e.target)) {
+      setShowEstimatesPopup(false);
+      document.removeEventListener('click', handleOutsideClick);
+    }
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (!showEstimatesPopup) {
+      document.addEventListener('click', handleOutsideClick);
+      setShowEstimatesPopup(true);
+    }
+  };
   if (inStock === 'sold out') {
     return null;
   }
@@ -43,7 +61,19 @@ const StockShipping = ({ inStock }) => {
             {shipping}
           </div>
           <div>
-            <a href="about:blank" className={styles.estimates}>Estimates for 96789</a>
+            <a
+              href="about:blank"
+              className={styles.estimates}
+              onClick={handleClick}
+            >
+              Estimates for 96789
+            </a>
+            <div ref={popupRef}>
+              <EstimatesPopup
+                showEstimatesPopup={showEstimatesPopup}
+                setShowEstimatesPopup={setShowEstimatesPopup}
+              />
+            </div>
           </div>
         </div>
       </div>
