@@ -50,3 +50,77 @@
 .compare:hover, .save:hover {
   cursor: pointer;
 }
+
+.popup {
+  position: absolute;
+  transform: translate(106%, 18%);
+  border: 1px solid #c5cbd5;
+  box-shadow: 0 0 2px 0 rgb(0 0 0 / 30%);
+  border-radius: 4px;
+  z-index: 1000;
+  width: 192px;
+  height: 100px;
+  background-color: #FFF;
+}
+
+.popupTriangle {
+  content: '';
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 20px;
+  top: -10%;
+  transform: translateX(-50%) rotate(-45deg);
+  border-top: 2px solid #c5cbd5;
+  border-right: 2px solid #c5cbd5;
+  border-left: none;
+  border-bottom: none;
+  background-color: #FFF;
+  z-index: 1000;
+}
+
+.popupX {
+  position: fixed;
+  right: 15px;
+  top: 10px;
+  color: #0046BE;
+}
+
+.popupX:hover {
+  cursor: pointer;
+}
+
+.popupText {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 13px;
+  margin-left: 30px;
+}
+
+.popupText p {
+  margin: 0;
+}
+
+.saved {
+  font-size: 13px;
+  color: #318000
+}
+
+.goTo {
+  font-size: 13px;
+  color: #0046BE;
+}
+
+.goTo:hover {
+  color: #001e73;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.popupText img {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}

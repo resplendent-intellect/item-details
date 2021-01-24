@@ -73,7 +73,7 @@
 
 .modal {
   position: absolute;
-  top: 50%;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #FFF;
@@ -120,9 +120,7 @@
   position: absolute;
   right: -18px;
   top: 9%;
-  transform: translateX(-50%) rotate(
-45deg
-);
+  transform: translateX(-50%) rotate(45deg);
   border-top: 2px solid #c5cbd5;
   border-right: 2px solid #c5cbd5;
   border-left: none;
