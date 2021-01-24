@@ -96,3 +96,12 @@
   font-size: 13px;
   padding-top: 6px;
 }
+
+.selected {
+  border: 2px solid black;
+}
+
+.selected:hover {
+  border: 2px solid black;
+  cursor: default;
+}
