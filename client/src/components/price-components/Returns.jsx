@@ -10,7 +10,13 @@ const Returns = () => (
         Guest shoppers get 15 days to return or exchange
         this item. Log in for personalized information.
         {' '}
-        <a href="http://localhost:3000" className={styles.learnMore}>Learn more &gt;</a>
+        <a
+          href="http://localhost:3000"
+          className={styles.learnMore}
+          onClick={(e) => { e.preventDefault() }}
+        >
+          Learn more &gt;
+        </a>
       </p>
     </div>
   </div>
