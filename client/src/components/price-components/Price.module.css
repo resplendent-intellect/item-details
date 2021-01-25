@@ -73,12 +73,13 @@
 
 .modal {
   position: absolute;
-  top: 75%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-55%, -34%);
   background-color: #FFF;
   z-index: 4;
-  margin: 100px
+  margin: 100px;
+  display:flex
 }
 
 .x {
