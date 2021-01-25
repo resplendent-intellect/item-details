@@ -71,15 +71,25 @@
   color: #001E73;
 }
 
+.modalContainer {
+  height: 100%;
+  width: 100%;
+}
+
 .modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-55%, -34%);
+  transform: translate(-50%, -50%);
   background-color: #FFF;
   z-index: 4;
-  margin: 100px;
-  display:flex
+  display: flex;
+  max-height: 95vh;
+}
+
+.modal img {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .x {

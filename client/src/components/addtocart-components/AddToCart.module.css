@@ -127,13 +127,12 @@
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-60%, 0%);
+  transform: translate(-50%, -50%);
   background-color: #FFF;
   z-index: 4;
-  margin: 100px;
   width: 800px;
   height: 645px;
 }
@@ -160,15 +159,17 @@
 }
 
 .modalContentContainer {
-  display: grid;
-  grid-template-rows: 1fr 3fr;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .subtotalContainer {
   display: flex;
   justify-content: space-between;
-  padding: 30px 40px;
-  border-bottom: 1px solid rgb(206, 206, 206)
+  margin: 15px 40px 0;
+  border-bottom: 1px solid rgb(206, 206, 206);
+  padding-bottom: 15px;
 }
 
 .productCard {
@@ -259,6 +260,7 @@
 .protectionContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 100%;
 }
 
 .protectionImgContainer img,  .protectionScreenShot {
@@ -293,4 +295,91 @@
 
 .box1 {
   display: flex;
+}
+
+.protectionDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-right: 12px;
+}
+
+.protectionContainer2 {
+  display: flex;
+  align-items: center;
+  height: 39px;
+}
+
+.shield {
+  width: 25px;
+  height: 27px;
+  margin: 0 10px 0 0;
+}
+
+.protectionContainer h3 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.protectionStarsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.stars {
+  font-size: 12px;
+  color: #0457c8;
+}
+
+.stars:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #001E73;
+}
+
+.stars img{
+  width: 66px;
+  height: 12px;
+}
+
+
+.protectionText1, .recommend {
+  font-size: 13px;
+}
+
+.protectionText1 {
+  border-bottom: 1px solid rgb(219, 219, 219)
+}
+
+.recommend {
+  font-style: italic;
+}
+
+.pricesContainer {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.twoYear {
+  margin: 0 10px;
+}
+
+.geekPrice {
+  font-weight: 700;
+}
+
+.geekMonthly {
+  font-size: 11px;
+}
+
+.learnMore {
+  font-size: 15px;
+  color: #0457c8;
+}
+
+.learnMore:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #001E73;
 }

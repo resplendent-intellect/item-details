@@ -57,12 +57,52 @@ const CartModal = ({ showCartModal, closeCartModal, product }) => {
             <div className={styles.protectionImgContainer}>
               <img src="https://bigbrain-itemdetails.s3-us-west-1.amazonaws.com/protectionimg.jpg" alt="protection-img" />
             </div>
-            <div className={styles.protectionDetails}>
-              <img
-                src="https://bigbrain-itemdetails.s3-us-west-1.amazonaws.com/Screen+Shot+2021-01-24+at+2.24.48+PM.png"
-                alt="protection-details"
-                className={styles.protectionScreenShot}
-                />
+
+            <div className={styles.protectionDetailsContainer}>
+              <div className={styles.protectionContainer2}>
+                <img src="https://bigbrain-itemdetails.s3-us-west-1.amazonaws.com/iconfinder_outlined_shield_4280489.png" alt="warranty icon" className={styles.shield} />
+                <div className={styles.protectionStarsContainer}>
+                  <h3>
+                    Protect your product
+                  </h3>
+                  <div className={styles.stars}>
+                    <img src="https://bigbrain-itemdetails.s3-us-west-1.amazonaws.com/5_stars.svg" alt="stars" />
+                    (839)
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.protectionText1}>
+                With Geek Squad® Product Replacement, if your product
+                stops working properly, we&apos;ll give you a replacement (if the
+                product is available) or reimburse you. You&apos;ll be covered for:
+
+                <ul>
+                  <li>Accidental damage while handling your product.</li>
+                  <li>Failures from normal wear and tear.</li>
+                  <li>Power surge damage.</li>
+                  <li>Issues with Bluetooth connectivity due to mechanical failure.</li>
+                </ul>
+              </div>
+
+              <div className={styles.recommend}>
+                96% of reviewers would recommend Geek Squad Protection
+              </div>
+
+              <div className={styles.pricesContainer}>
+                <div className={styles.twoYear}>
+                  2-Year Accidental Geek Squad Replacement
+                </div>
+                <div>
+                  <div className={styles.geekPrice}>$69.99</div>
+                  <div className={styles.geekMonthly}>$About $2.92/mo.</div>
+                </div>
+              </div>
+
+              <div className={styles.learnMore}>
+                Learn more
+              </div>
+
               <button type="button" className={styles.protectionBtn}>
                 <div>
                   <img src="https://bigbrain-itemdetails.s3-us-west-1.amazonaws.com/shoppingcart.svg" alt="shopping cart" />

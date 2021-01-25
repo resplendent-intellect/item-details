@@ -9,7 +9,7 @@ const PriceModal = ({ showPriceModal, closePriceModal }) => {
     return null;
   }
   return (
-    <div>
+    <div className={styles.modalContainer}>
       <div
         className={styles.modal}
       >
