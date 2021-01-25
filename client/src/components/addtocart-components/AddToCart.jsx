@@ -4,11 +4,13 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import SavePopup from './SavePopup.jsx';
 import CartModal from './CartModal.jsx';
+import ComparePopup from './ComparePopup.jsx';
 import styles from './AddToCart.module.css';
 
 const AddToCart = ({ product }) => {
   const [showSavePopup, setShowSavePopup] = useState(false);
   const [showCartModal, setShowCartModal] = useState(false);
+  const [showComparePopup, setShowComparePopup] = useState(false);
 
   const popupRef = useRef();
   const handleOutsideClick = (e) => {
@@ -46,15 +48,16 @@ const AddToCart = ({ product }) => {
         />
       </div>
       <div className={styles.compareSaveContainer}>
-        <div className={styles.compare}>
-          <input type="checkbox" />
+        <div
+          className={styles.compare}
+          onClick={() => { setShowComparePopup(true); }}
+        >
           Compare
         </div>
         <div
           className={styles.save}
           onClick={handleClick}
         >
-          {/* <input type="checkbox" /> */}
           Save
         </div>
       </div>
@@ -62,6 +65,13 @@ const AddToCart = ({ product }) => {
         <SavePopup
           showSavePopup={showSavePopup}
           setShowSavePopup={setShowSavePopup}
+        />
+      </div>
+      <div>
+        <ComparePopup
+          showComparePopup={showComparePopup}
+          setShowComparePopup={setShowComparePopup}
+          product={product}
         />
       </div>
     </div>

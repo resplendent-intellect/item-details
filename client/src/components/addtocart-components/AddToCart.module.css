@@ -162,7 +162,6 @@
 .modalContentContainer {
   display: grid;
   grid-template-rows: 1fr 3fr;
-  /* height: 100%; */
 }
 
 .subtotalContainer {
@@ -290,4 +289,8 @@
   width: 16px;
   height: 16px;
   margin-right: 5px;
+}
+
+.box1 {
+  display: flex;
 }
