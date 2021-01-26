@@ -49,13 +49,13 @@ const AddToCart = ({ product }) => {
       </div>
       <div className={styles.compareSaveContainer}>
         <div
-          className={styles.compare}
+          className={`${styles.compare} compare`}
           onClick={() => { setShowComparePopup(true); }}
         >
           Compare
         </div>
         <div
-          className={styles.save}
+          className={`${styles.save} save`}
           onClick={handleClick}
         >
           Save
