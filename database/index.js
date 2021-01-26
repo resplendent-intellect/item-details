@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/bestbuy', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost/bestbuy2', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 db.on('error', () => {
@@ -19,8 +19,10 @@ const productSchema = new mongoose.Schema({
   sku: Number,
   price: Number,
   variations: [{
+    _id: Number,
     variationType: String,
     variationItems: [{
+      _id: Number,
       name: String,
       price: Number,
       image: String,
