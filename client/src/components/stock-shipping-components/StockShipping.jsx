@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import EstimatesPopup from './EstimatesPopup.jsx';
 import styles from './StockShipping.module.css';
+import airPodsMax from '../data/airPodsMaxData';
 
 const StockShipping = ({ inStock }) => {
   const [showEstimatesPopup, setShowEstimatesPopup] = useState(false);
@@ -26,18 +27,20 @@ const StockShipping = ({ inStock }) => {
   }
   let pickup;
   let shipping;
-  if (inStock === 'Backordered') {
-    pickup = 'Not available for this item';
-    shipping = 'Should ship by tomorrow';
-  }
-  if (inStock === 'in stock') {
+  const inStockStyle = () => {
+    if (inStock === 'Backordered') {
+      pickup = 'Not available for this item';
+      shipping = 'Should ship by tomorrow';
+      return `${styles.backordered}`;
+    }
     pickup = 'Order now for pickup tomorrow';
     shipping = 'Get it by tomorrow';
-  }
+    return `${styles.inStock}`;
+  };
 
   return (
     <div className={styles.stockShippingContainer}>
-      <div className={styles.inStock}>
+      <div className={inStockStyle()}>
         {inStock === 'in stock' ? 'Get it in 8 days' : inStock}
       </div>
       <div className={styles.pickupContainer}>
@@ -82,7 +85,11 @@ const StockShipping = ({ inStock }) => {
 };
 
 StockShipping.propTypes = {
-  inStock: PropTypes.string.isRequired,
+  inStock: PropTypes.string,
+};
+
+StockShipping.defaultProps = {
+  inStock: airPodsMax.inStock,
 };
 
 export default StockShipping;

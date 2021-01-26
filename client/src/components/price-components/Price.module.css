@@ -1,3 +1,8 @@
+.componentContainer {
+  border-bottom: 1px solid #c5cbd5;
+  padding-bottom: 15px;
+}
+
 .pricesContainer {
   display: flex;
 }

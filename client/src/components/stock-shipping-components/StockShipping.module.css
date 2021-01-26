@@ -3,12 +3,22 @@
   flex-direction: column;
   justify-content: center;
   height: 111px;
+  border-bottom: 1px solid #c5cbd5;
+  padding-bottom: 8px;
+  padding-top: 7px;
+}
+
+.backordered {
+  font-size: 13px;
+  font-weight: 700;
+  color: #96291A;
+  margin-bottom: 5px;
 }
 
 .inStock {
   font-size: 13px;
   font-weight: 700;
-  color: #96291A;
+  color: #408806;
   margin-bottom: 5px;
 }
 

@@ -4,12 +4,13 @@ import PriceMatch from './PriceMatch.jsx';
 import Returns from './Returns.jsx';
 import PriceModal from './PriceModal.jsx';
 import styles from './Price.module.css';
+import airPodsMax from '../data/airPodsMaxData';
 
 const Price = ({ price }) => {
   const [showPriceModal, setShowPriceModal] = useState(false);
 
   return (
-    <div>
+    <div className={styles.componentContainer}>
       <PriceMatch />
       <div className={styles.pricesContainer}>
         <div className={styles.price}>
@@ -56,7 +57,11 @@ const Price = ({ price }) => {
 };
 
 Price.propTypes = {
-  price: PropTypes.number.isRequired,
+  price: PropTypes.number,
+};
+
+Price.defaultProps = {
+  price: airPodsMax.price,
 };
 
 export default Price;
