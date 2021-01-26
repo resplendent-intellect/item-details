@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import $ from 'jquery';
 import Price from './price-components/Price.jsx';
 import AllVariations from './variations-components/AllVariations.jsx';
@@ -8,43 +8,61 @@ import StockShipping from './stock-shipping-components/StockShipping.jsx';
 import AddToCart from './addtocart-components/AddToCart.jsx';
 import Offers from './offers-components/Offers.jsx';
 
-const App = () => {
-  const [product, setProduct] = useState(airPodsMax);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      product: airPodsMax,
+    };
+  }
 
-  // const getProduct = (id) => {
-  //   $.get(`/products/${id}`, (data) => {
-  //     setProduct(data);
-  //   });
-  // };
+  componentDidMount() {
+    this.getRandomProduct();
+  }
 
-  // useEffect(() => {
-  //   getProduct('6007a3853fdca13bc5b1a2e5');
-  // });
+  getProduct(id) {
+    $.get(`/products/${id}`, (data) => {
+      this.setState({
+        product: data,
+      });
+    });
+  }
 
-  const {
-    price,
-    variations,
-    protectionPlans,
-    name,
-    inStock,
-    offers,
-  } = product;
+  getRandomProduct() {
+    $.get('/random', (data) => {
+      this.setState({
+        product: data[0],
+      });
+    });
+  }
 
-  return (
-    <div>
-      <Price price={price} />
-      <hr />
-      <AllVariations variations={variations} />
-      <hr />
-      <Protection protectionPlans={protectionPlans} name={name} />
-      <hr />
-      <StockShipping inStock={inStock} />
-      <hr />
-      <AddToCart product={product} />
-      <hr />
-      <Offers offers={offers} />
-    </div>
-  );
-};
+  render() {
+    const { product } = this.state;
+    const {
+      price,
+      variations,
+      protectionPlans,
+      name,
+      inStock,
+      offers,
+    } = product;
+
+    return (
+      <div>
+        <Price price={price} />
+        <hr />
+        <AllVariations variations={variations} />
+        <hr />
+        <Protection protectionPlans={protectionPlans} name={name} />
+        <hr />
+        <StockShipping inStock={inStock} />
+        <hr />
+        <AddToCart product={product} />
+        <hr />
+        <Offers offers={offers} />
+      </div>
+    );
+  }
+}
 
 export default App;
