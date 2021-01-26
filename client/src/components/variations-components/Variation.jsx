@@ -11,7 +11,6 @@ const Variation = ({ variation }) => {
   const [defaultVariation, setDefaultVariation] = useState(variation.variationItems[0].name);
 
   const wrapperStyle = {
-    // transform: `translateX(-${variationItemIndex * (100 / variation.variationItems.length)}%)`,
     transform: `translateX(-${variationItemIndex * (86 * (variation.variationItems.length - 4))}px)`,
   };
 
