@@ -16,17 +16,17 @@ class App extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.getRandomProduct();
-  // }
+  componentDidMount() {
+    this.getProduct();
+  }
 
-  // getProduct(id) {
-  //   $.get(`/products/${id}`, (data) => {
-  //     this.setState({
-  //       product: data,
-  //     });
-  //   });
-  // }
+  getProduct() {
+    $.get(`http://localhost:3002/api${window.location.pathname}`, (data) => {
+      this.setState({
+        product: data,
+      });
+    });
+  }
 
   // getRandomProduct() {
   //   $.get('/random', (data) => {
