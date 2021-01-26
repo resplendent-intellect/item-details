@@ -8,6 +8,11 @@ describe('Render components', () => {
     wrapper = shallow(<App />, { disableLifecycleMethods: true });
   });
 
-  it('render title of App', () => {
+  it('Renders App', () => {
+    shallow(<App />);
+  });
+
+  it('Renders all children of App', () => {
+    expect(wrapper.children().length).toEqual(11);
   });
 });

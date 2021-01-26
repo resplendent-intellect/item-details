@@ -34,7 +34,7 @@ const Price = ({ price }) => {
           <div>
             <a
               href="/"
-              className={styles.showMeHow}
+              className={`${styles.showMeHow} showMeHow`}
               onClick={(e) => {
                 e.preventDefault();
                 setShowPriceModal(true);

@@ -16,8 +16,8 @@ const PriceMatch = () => {
   const handleClick = (e) => {
     e.preventDefault();
     if (!showPricePopup) {
-      document.addEventListener('click', handleOutsideClick);
       setShowPricePopup(true);
+      document.addEventListener('click', handleOutsideClick);
     }
   };
 

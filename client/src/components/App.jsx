@@ -40,7 +40,7 @@ const App = () => {
       <hr />
       <StockShipping inStock={inStock} />
       <hr />
-      <AddToCart />
+      <AddToCart product={product} />
       <hr />
       <Offers offers={offers} />
     </div>

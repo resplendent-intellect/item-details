@@ -6,7 +6,13 @@ body {
 }
 
 #app {
+  position: absolute;
   width: 383px;
   margin-top: 400px;
   margin-right: 50px;
+}
+
+#portal {
+  position: absolute;
+  width: 100%;
 }

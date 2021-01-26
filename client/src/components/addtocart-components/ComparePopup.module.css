@@ -1,0 +1,126 @@
+.popupContainer {
+  position: fixed;
+  width: 101%;
+  height: 200px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  z-index: 1002;
+}
+
+.topRow {
+  display: flex;
+  margin: 20px 300px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clearAllCompare {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 190px;
+}
+
+.compareText {
+  color: #FFF;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.clearAll {
+  color: #FFF200;
+  font-size: 15px;
+}
+
+.clearAll:hover {
+  cursor: pointer;
+}
+
+.compareBtn {
+  display: flex;
+  width: 120px;
+  height: 35px;
+  background-color: #0046BE;
+  color: #FFF;
+  border-radius: 4px;
+  border: 0;
+  font-size: 15px;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease-out 0s;
+}
+
+.compareBtn:hover {
+  background-color: #001e73;
+  cursor: pointer;
+}
+
+.bottomRow {
+  display: flex;
+  margin: 20px 300px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box {
+  width: 203px;
+  height: 89px;
+  background-color: #1D252C;
+  margin: 0 12px;
+}
+
+.arrow {
+  font-size: 26px;
+  color: #C3c4c4;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.box1 {
+  display: flex;
+  background-color: #FFF;
+  align-items: center;
+}
+
+.img {
+  max-width: 60%;
+  max-height: 60%;
+  margin: 0 6px;
+}
+
+.infoNPrice {
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  font-size: 13px;
+  color: #0457c8;
+}
+
+.price {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.xContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-items: flex-start;
+}
+
+.blueX {
+  height: 24px;
+}
+
+.blueX:hover,
+.img:hover,
+.info:hover {
+  cursor: pointer;
+}
