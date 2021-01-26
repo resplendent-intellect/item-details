@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { findOne } = require('../database/helpers');
+const { findOne, findRandom } = require('../database/helpers');
 
 const app = express();
 
@@ -20,6 +20,15 @@ app.get('/products/:id', (req, res) => {
       res.status(404).send(err);
     }
     res.status(200).send(results);
+  });
+});
+
+app.get('/random', (req, res) => {
+  findRandom((err, data) => {
+    if (err) {
+      res.status(404).send(err);
+    }
+    res.status(200).send(data);
   });
 });
 
