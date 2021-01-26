@@ -3,6 +3,9 @@
   flex-direction: column;
   justify-content: space-evenly;
   height: 154px;
+  border-bottom: 1px solid #c5cbd5;
+  padding-bottom: 8px;
+  padding-top: 7px;
 }
 
 .protectionContainer {

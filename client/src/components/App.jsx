@@ -50,15 +50,10 @@ class App extends React.Component {
     return (
       <div>
         <Price price={price} />
-        <hr />
         <AllVariations variations={variations} />
-        <hr />
         <Protection protectionPlans={protectionPlans} name={name} />
-        <hr />
         <StockShipping inStock={inStock} />
-        <hr />
         <AddToCart product={product} />
-        <hr />
         <Offers offers={offers} />
       </div>
     );

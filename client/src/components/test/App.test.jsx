@@ -13,6 +13,6 @@ describe('Render components', () => {
   });
 
   it('Renders all children of App', () => {
-    expect(wrapper.children().length).toEqual(11);
+    expect(wrapper.children().length).toEqual(6);
   });
 });

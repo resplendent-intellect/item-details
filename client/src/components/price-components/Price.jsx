@@ -10,7 +10,7 @@ const Price = ({ price }) => {
   const [showPriceModal, setShowPriceModal] = useState(false);
 
   return (
-    <div>
+    <div className={styles.componentContainer}>
       <PriceMatch />
       <div className={styles.pricesContainer}>
         <div className={styles.price}>
