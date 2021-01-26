@@ -1,14 +1,13 @@
 /* eslint-disable react/jsx-boolean-value */
 import 'jsdom-global/register';
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import AddToCart from '../addtocart-components/AddToCart.jsx';
 import CartModal from '../addtocart-components/CartModal.jsx';
 import SavePopup from '../addtocart-components/SavePopup.jsx';
 import ComparePopup from '../addtocart-components/ComparePopup.jsx';
 import airPodsMax from '../data/airPodsMaxData';
 
-const dummyObj = {};
 const dummyFn = () => {};
 
 it('renders AddToCart', () => {
