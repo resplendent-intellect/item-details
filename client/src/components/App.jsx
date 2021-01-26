@@ -28,14 +28,6 @@ class App extends React.Component {
     });
   }
 
-  // getRandomProduct() {
-  //   $.get('/random', (data) => {
-  //     this.setState({
-  //       product: data[0],
-  //     });
-  //   });
-  // }
-
   render() {
     const { product } = this.state;
     const {
