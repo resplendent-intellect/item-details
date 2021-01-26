@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Price.module.css';
 
 const Returns = () => (
-  <div id="returns" className={styles.returns}>
+  <div id="returns" className={`${styles.returns} returns`}>
     <img src="https://bigbrain-itemdetails.s3-us-west-1.amazonaws.com/iconfinder_comerce_delivery_shop_business-24_4544831.svg" alt="return icon" />
     <div className={styles.textContainer}>
       <h3>15-DAY FREE & EASY RETURNS</h3>
