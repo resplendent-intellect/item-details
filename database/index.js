@@ -11,6 +11,7 @@ db.once('open', () => {
 });
 
 const productSchema = new mongoose.Schema({
+  _id: Number,
   brand: String,
   name: String,
   model: String,
