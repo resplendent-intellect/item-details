@@ -61,8 +61,9 @@ const randomOffers = () => {
 };
 
 const seed = () => {
-  for (let i = 0; i < 100; i += 1) {
+  for (let i = 2; i < 102; i += 1) {
     const newProduct = new Product({
+      _id: i,
       brand: faker.company.companyName(),
       name: faker.commerce.productName(),
       model: faker.random.alphaNumeric(),
