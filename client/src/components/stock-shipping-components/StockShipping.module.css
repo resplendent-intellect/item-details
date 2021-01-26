@@ -5,10 +5,17 @@
   height: 111px;
 }
 
-.inStock {
+.backordered {
   font-size: 13px;
   font-weight: 700;
   color: #96291A;
+  margin-bottom: 5px;
+}
+
+.inStock {
+  font-size: 13px;
+  font-weight: 700;
+  color: #408806;
   margin-bottom: 5px;
 }
 

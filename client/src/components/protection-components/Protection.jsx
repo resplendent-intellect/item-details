@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Plan from './Plan.jsx';
 import styles from './Protection.module.css';
+import airPodsMax from '../data/airPodsMaxData';
 
 const Protection = ({ protectionPlans, name }) => (
   <div className={styles.container}>
@@ -25,14 +26,19 @@ const Protection = ({ protectionPlans, name }) => (
       ))}
     </div>
     <div>
-      <a href="about:blank" className={styles.learnMore}>Learn more</a>
+      <a href="/" className={styles.learnMore} onClick={(e) => { e.preventDefault(); }}>Learn more</a>
     </div>
   </div>
 );
 
 Protection.propTypes = {
-  protectionPlans: PropTypes.instanceOf(Array).isRequired,
-  name: PropTypes.string.isRequired,
+  protectionPlans: PropTypes.instanceOf(Array),
+  name: PropTypes.string,
+};
+
+Protection.defaultProps = {
+  protectionPlans: airPodsMax.protectionPlans,
+  name: airPodsMax.name,
 };
 
 export default Protection;
