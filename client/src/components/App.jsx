@@ -16,25 +16,25 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.getRandomProduct();
-  }
+  // componentDidMount() {
+  //   this.getRandomProduct();
+  // }
 
-  getProduct(id) {
-    $.get(`/products/${id}`, (data) => {
-      this.setState({
-        product: data,
-      });
-    });
-  }
+  // getProduct(id) {
+  //   $.get(`/products/${id}`, (data) => {
+  //     this.setState({
+  //       product: data,
+  //     });
+  //   });
+  // }
 
-  getRandomProduct() {
-    $.get('/random', (data) => {
-      this.setState({
-        product: data[0],
-      });
-    });
-  }
+  // getRandomProduct() {
+  //   $.get('/random', (data) => {
+  //     this.setState({
+  //       product: data[0],
+  //     });
+  //   });
+  // }
 
   render() {
     const { product } = this.state;
