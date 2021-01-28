@@ -127,6 +127,7 @@
   z-index: 999;
   width: 320px;
   height: 480px;
+  background-color: #FFF;
 }
 
 .popupTriangle {
