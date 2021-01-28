@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-run');
 
