@@ -14,7 +14,7 @@ const ComparePopup = ({ showComparePopup, setShowComparePopup, product }) => {
     <div className={styles.popupContainer}>
       <div className={styles.topRow}>
         <div className={styles.compareText}>
-          Compare(1)
+          Compare (1)
         </div>
         <div className={styles.clearAllCompare}>
           <div
