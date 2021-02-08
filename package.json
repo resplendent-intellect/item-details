@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test jest -runInBand --detectOpenHandles --forceExit --collectCoverage",
-    "seed": "node seeds/seed.js",
-    "seedairpods": "node seeds/airPodsMaxSeed.js",
-    "start": "nodemon ./server/server.js",
+    "seed": "node ./database/seed.js",
+    "start": "nodemon ./server/index.js",
     "client": "webpack"
   },
   "repository": {
@@ -51,12 +50,14 @@
     "body-parser": "^1.19.0",
     "core-js": "^3.8.2",
     "cors": "^2.8.5",
+    "csv-write-stream": "^2.0.0",
     "eslint-plugin-jest": "^24.1.3",
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "jquery": "^3.5.1",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.11",
+    "pg": "^8.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",

@@ -21,7 +21,7 @@ class App extends React.Component {
   }
 
   getProduct() {
-    $.get(`http://localhost:3002/api${window.location.pathname}`, (data) => {
+    $.get(`http://localhost:3000/api${window.location.pathname}`, (data) => {
       this.setState({
         product: data,
       });
