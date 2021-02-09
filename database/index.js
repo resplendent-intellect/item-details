@@ -1,4 +1,4 @@
-const { Client } = require('pg');
+const { Pool } = require('pg');
 const { userName, password } = require('../db.config.js');
 
 const conString = {
@@ -8,7 +8,7 @@ const conString = {
   database: 'sdc_hayley',
   password,
 };
-const client = new Client(conString);
+const client = new Pool(conString);
 client.connect((err) => {
   if (err) {
     console.error('connection error', err.stack);
