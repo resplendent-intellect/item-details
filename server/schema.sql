@@ -7,7 +7,7 @@ CREATE TABLE "products"(
     "model" VARCHAR(255) NOT NULL,
     "color" VARCHAR(255) NOT NULL,
     "sku" INTEGER NOT NULL,
-    "price" MONEY NOT NULL,
+    "price" INTEGER NOT NULL,
     "instock" stock,
     "variations" JSON NOT NULL,
     "offers" JSON NOT NULL,

@@ -22,7 +22,8 @@ app.get('/api/products/:id', (req, res) => {
     if (err) {
       res.status(404).send(err);
     } else {
-      res.status(200).send(results);
+      const product = results.rows[0];
+      res.status(200).send(product);
     }
   });
 });
