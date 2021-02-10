@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { findOne } = require('../database/queries.js');
+require('newrelic');
 
 const app = express();
 const PORT = 3000;

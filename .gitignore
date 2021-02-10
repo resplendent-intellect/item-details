@@ -5,3 +5,5 @@ db.config.js
 /database/products3.csv
 /database/products4.csv
 /database/products5.csv
+/newrelic.js
+/newrelic_agent.log
