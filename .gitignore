@@ -1,3 +1,9 @@
 node_modules
 db.config.js
 /database/products1.csv
+/database/products2.csv
+/database/products3.csv
+/database/products4.csv
+/database/products5.csv
+/newrelic.js
+/newrelic_agent.log

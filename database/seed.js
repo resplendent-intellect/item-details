@@ -3,20 +3,19 @@ const faker = require('faker');
 const csvWriter = require('csv-write-stream');
 
 const writer = csvWriter();
-let counter = 0;
 
-// node --max-old-space-size=8192 dataGeneration.js
+// node --max-old-space-size=8192 seed.js
 
 const stockStatus = ['in stock', 'sold out', 'Backordered'];
 
 const randomVariationItems = () => {
-  const randVariationItems = Math.ceil(Math.random() * 5);
-  const randomImage = Math.ceil(Math.random() * 1000);
+  const randVariationItems = Math.ceil(Math.random() * 10);
   const items = [];
   for (let i = 0; i < randVariationItems; i += 1) {
+    const randomImage = Math.ceil(Math.random() * 1000);
     items.push({
       name: faker.commerce.productName(),
-      price: faker.commerce.price(),
+      price: faker.random.number(5000),
       image: `https://picsum.photos/id/${randomImage}/300/300`,
     });
   }
@@ -41,7 +40,7 @@ const randomProtection = () => {
   for (let i = 0; i < rand; i += 1) {
     protections.push({
       name: `${faker.company.companyName()} Plan`,
-      price: faker.commerce.price(),
+      price: faker.random.number(5000),
     });
   }
   return protections;
@@ -60,16 +59,16 @@ const randomOffers = () => {
 };
 
 const dataGenPlans = () => {
-  writer.pipe(fs.createWriteStream('products1.csv'));
-  for (let i = 1; i <= 2000000; i += 1) {
+  writer.pipe(fs.createWriteStream('products5.csv'));
+  for (let i = 8000001; i <= 10000000; i += 1) {
     writer.write({
-      _id: counter += 1,
+      _id: i,
       brand: faker.company.companyName(),
       name: faker.commerce.productName(),
       model: faker.random.alphaNumeric(8),
       color: faker.commerce.color(),
-      sku: faker.random.number(),
-      price: faker.commerce.price(),
+      sku: faker.random.number(1000000),
+      price: faker.random.number(5000),
       instock: faker.random.arrayElement(stockStatus),
       variations: JSON.stringify(randomVariations()),
       offers: JSON.stringify(randomOffers()),
