@@ -17,22 +17,17 @@ CREATE TABLE "products"(
 ALTER TABLE
     "products" ADD PRIMARY KEY("_id");
 
+-- copy csv files into local machines postgres db
 COPY products FROM '/home/hayley/Desktop/hrsjo3/resplendent/bestbuy-itemdetails/database/products1.csv'
 DELIMITER ','
 CSV HEADER;
 
-COPY products FROM '/home/hayley/Desktop/hrsjo3/resplendent/bestbuy-itemdetails/database/products2.csv'
+-- copy csv files into EC2 instance machines postgres db
+COPY products FROM '/home/ubuntu/products5.csv'
 DELIMITER ','
 CSV HEADER;
 
-COPY products FROM '/home/hayley/Desktop/hrsjo3/resplendent/bestbuy-itemdetails/database/products3.csv'
-DELIMITER ','
-CSV HEADER;
+-- psql -c "\copy products FROM '/home/csv/products1.csv'
+-- DELIMITER ','
+-- CSV HEADER;"
 
-COPY products FROM '/home/hayley/Desktop/hrsjo3/resplendent/bestbuy-itemdetails/database/products4.csv'
-DELIMITER ','
-CSV HEADER;
-
-COPY products FROM '/home/hayley/Desktop/hrsjo3/resplendent/bestbuy-itemdetails/database/products5.csv'
-DELIMITER ','
-CSV HEADER;
