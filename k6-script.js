@@ -29,7 +29,7 @@ export default function main() {
 
   // first 10% of db
   let rand = Math.floor(Math.random() * 10000000 + 1);
-  response = http.get(`http://localhost:3000/products/${rand}`);
+  response = http.get(`http://54.183.188.185:3002/products/${rand}`);
 
   errorRate.add(response.status >= 400);
 
