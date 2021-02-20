@@ -1,11 +1,11 @@
 const { Pool } = require('pg');
-const { userName, password } = require('../db.config.js');
+const { userName, password, db } = require('../db.config.js');
 
 const conString = {
-  host: 'localhost',
+  host: '54.219.212.154',
   port: 5432,
   user: userName,
-  database: 'sdc_hayley',
+  database: db,
   password,
 };
 const client = new Pool(conString);
