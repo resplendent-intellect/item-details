@@ -4,6 +4,8 @@ const cors = require('cors');
 const { findOne } = require('../database/queries.js');
 require('newrelic');
 
+const file = './loaderio-c47c8a77a49e0e2ca9a2bba3c7f965cd.txt';
+
 const app = express();
 const PORT = 3002;
 
@@ -15,6 +17,11 @@ app.use(bodyParser.json());
 
 app.get('/api', (req, res) => {
   res.redirect('/api/products/1');
+});
+
+app.get('/loaderio-c47c8a77a49e0e2ca9a2bba3c7f965cd', (req, res) => {
+  res.statusCode = 200;
+  res.download(file);
 });
 
 app.get('/api/products/:id', (req, res) => {

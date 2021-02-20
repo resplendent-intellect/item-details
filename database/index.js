@@ -20,3 +20,18 @@ client.connect((err) => {
 module.exports = {
   client,
 };
+
+// http {
+//   upstream app {
+//     least_conn;
+//     server 3.101.40.70:3002;
+//     server 54.241.81.174:3002;
+//   }
+//   server {
+//     listen 80
+//     location / {
+//       proxy_pass http://app/;
+//     }
+//   }
+// }
+// events { }
